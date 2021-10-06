@@ -18,6 +18,8 @@ import java.util.Collections;
 @NoArgsConstructor
 @Entity
 public class AppUser implements UserDetails {
+
+    // Member Variables
     @Id
     @SequenceGenerator(
             name = "appuser_sequence",
@@ -29,10 +31,6 @@ public class AppUser implements UserDetails {
             generator = "appuser_sequence"
     )
     private Long id;
-
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "player_id", referencedColumnName = "id")
-//    private Player player;
     private String firstName;
     private String lastName;
     private String email;
@@ -42,6 +40,8 @@ public class AppUser implements UserDetails {
     private Boolean locked = false;
     private Boolean enabled = false;
 
+
+    // Custom Constructor
     public AppUser(String firstName, String lastName, String email, String password, AppUserRole appUserRole) {
         this.firstName = firstName;
         this.lastName = lastName;
